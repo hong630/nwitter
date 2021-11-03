@@ -6,14 +6,14 @@ import Home from "../routes/Home";
 export default ()=>{
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return(
-      <Router>
+      <Router exact path = "/">
           <Switch>
               {isLoggedIn?
               <>
               <Route>
                   <Home />
                 </Route>
-              </>:<Route><Auth /></Route> }
+              </>:<Route exact path = "/"><Auth /></Route> }
           </Switch>
       </Router>
   )
